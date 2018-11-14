@@ -1,0 +1,44 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Music Player
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700")
+        link(rel="stylesheet", href="css/style.css")
+    body
+        .audio
+            .audio__songDetails
+                .like-btn
+                    i(class="fas fa-heart")
+                .song
+                    .song__avatar
+                    .song__details
+                        h1.song__title First Snow
+                        h2.song__album Automn
+            .audio__seekBar
+                .song-timer 
+                .seek-bar
+                    .fill
+                    .handle
+                .song-duration 
+            .audio__controls
+                .replay-btn
+                    i(class="fas fa-reply")
+                .shuffle-btn
+                    i(class="fas fa-random")
+                .back-btn
+                    i(class="fas fa-backward")
+                .play-btn
+                    i(class="fas fa-play")
+                .next-btn
+                    i(class="fas fa-forward")
+                .vol-control
+                    .vol-bar
+                        .fill
+                        .handle
+                    .vol-icon
+                        i(class="fas fa-volume-down")
+        script(src="js/app.js")
+                

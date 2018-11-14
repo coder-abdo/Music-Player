@@ -7,6 +7,17 @@
            'sounds/Fly_of_the_Brants.mp3',
            'sounds/Vivace_aperto.mp3'
         ],
+        songsTitle = [
+            'first snow',
+            'fly of the brants',
+            'vivac aperto'
+        ], 
+        songsImgs = [
+            'url("images/1.jpg")',
+            'url("images/2.jpg")',
+            'url("images/3.jpg")'
+        ],
+        songTitle, songAvatar,
         seekFillBtn, volFillBtn,
         audioTime, audioDuration,
         prevBtn, nextBtn,
@@ -20,6 +31,8 @@
         volBtn = doc.querySelector('.vol-bar');
         volFillBtn = volBtn.querySelector('.fill');
         volIcon = doc.querySelector('.vol-icon');
+        songTitle = doc.querySelector('.song__title');
+        songAvatar = doc.querySelector('.song__avatar');
         audioTime = doc.querySelector('.song-timer');
         audioDuration = doc.querySelector('.song-duration');
         prevBtn = doc.querySelector('.back-btn');
@@ -125,6 +138,8 @@
         prevBtn.addEventListener('click', function(){
             cur--;
             audio.src = songs[cur];
+            songTitle.textContent = songsTitle[cur];
+            songAvatar.style.backgroundImage = songsImgs[cur];
             if(cur <= 0){
                 cur  = songs.length - 1;
             }
@@ -133,6 +148,8 @@
         nextBtn.addEventListener('click', function(){
             cur++;
             audio.src = songs[cur];
+            songTitle.textContent = songsTitle[cur];
+            songAvatar.style.backgroundImage = songsImgs[cur];
             if(cur > songs.length - 1){
                 cur = 0;
             }

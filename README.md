@@ -5,4 +5,4 @@
 3. JavaScript
 4. Gulp js
 
-[inspired by: dribble shot ]('https://dribbble.com/shots/1002161-Music-Player')
+[inspired by: dribble shot ](https://dribbble.com/shots/1002161-Music-Player)

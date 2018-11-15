@@ -21,6 +21,8 @@
         seekFillBtn, volFillBtn,
         audioTime, audioDuration,
         prevBtn, nextBtn,
+        replayBtn, randomBtn,
+        isClicked = false,
         volIcon, isDown = false;
     var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
     function init(){
@@ -37,6 +39,8 @@
         audioDuration = doc.querySelector('.song-duration');
         prevBtn = doc.querySelector('.back-btn');
         nextBtn = doc.querySelector('.next-btn');
+        replayBtn = doc.querySelector('.replay-btn');
+        randomBtn = doc.querySelector('.shuffle-btn');
         audio.src = songs[cur];
         handlers();
         makeVisulazation();
@@ -85,6 +89,28 @@
                 audio.pause();
             }
         });
+        randomBtn.addEventListener('click',function(){
+            
+            this.classList.toggle('active');
+            if(!isClicked){
+                var rand = ~~(Math.random() * songs.length);
+                audio.src = songs[rand];
+                songTitle.textContent = songsTitle[rand];
+                isClicked = !isClicked;
+            }
+            
+        });
+        replayBtn.addEventListener('click', function(){
+            this.classList.toggle('active');
+            if(!isClicked){
+                audio.addEventListener('ended', function(){
+                    audio.currentTime = 0;
+                    audio.paly();
+                }, false);
+                audio.play();
+                isClicked = !isClicked;
+            }
+        })
         audio.addEventListener('play', function(){
             playBtn.firstElementChild.className = 'fas fa-pause';
         });
@@ -140,6 +166,7 @@
             var p = getP(e, volBtn);
             volFillBtn.style.width = p * 100 + '%';
         });
+        
         volBtn.addEventListener('mouseup', function(e){
             if(!isDown) return;
             isDown = false;

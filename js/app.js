@@ -99,6 +99,7 @@
                 var rand = ~~(Math.random() * songs.length);
                 audio.src = songs[rand];
                 songTitle.textContent = songsTitle[rand];
+                songAvatar.style.backgroundImage = songsImgs[rand];
                 isClicked = !isClicked;
             }
             

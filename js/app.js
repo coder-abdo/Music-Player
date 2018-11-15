@@ -5,17 +5,20 @@
         cur = 0, songs = [
            'sounds/First_Snow.mp3',
            'sounds/Fly_of_the_Brants.mp3',
-           'sounds/Vivace_aperto.mp3'
+           'sounds/Vivace_aperto.mp3',
+           'sounds/words.mp3'
         ],
         songsTitle = [
             'first snow',
             'fly of the brants',
-            'vivac aperto'
+            'vivac aperto',
+            'words'
         ], 
         songsImgs = [
             'url("images/1.jpg")',
             'url("images/2.jpg")',
-            'url("images/3.jpg")'
+            'url("images/3.jpg")',
+            'url("images/words.jpg")'
         ],
         songTitle, songAvatar,
         seekFillBtn, volFillBtn,

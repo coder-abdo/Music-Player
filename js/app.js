@@ -163,22 +163,24 @@
         });
 
         prevBtn.addEventListener('click', function(){
-            cur--;
             audio.src = songs[cur];
             songTitle.textContent = songsTitle[cur];
             songAvatar.style.backgroundImage = songsImgs[cur];
             if(cur <= 0){
                 cur  = songs.length - 1;
+            }else {
+                cur--;
             }
         });
 
         nextBtn.addEventListener('click', function(){
-            cur++;
             audio.src = songs[cur];
             songTitle.textContent = songsTitle[cur];
             songAvatar.style.backgroundImage = songsImgs[cur];
-            if(cur > songs.length - 1){
+            if(cur >= songs.length - 1){
                 cur = 0;
+            }else {
+                cur++;
             }
         });
     }

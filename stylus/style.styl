@@ -44,20 +44,26 @@ body
         background-image radial-gradient(circle at left, $bgcontrols 0%, $bgbtns 100%)
         border-top-left-radius 1rem
         border-top-right-radius 1rem
-        flex()
-        flex-direction column
-        padding-left 4rem
-        padding-right 2rem
+        flex(space-between, flex-start)
+        flex-direction column  
         padding-top 1rem
-        padding-bottom 1rem
         .like-btn
             align-self flex-end
             font-size 3rem
             color $bgfillseekbar
+            padding-right 2rem
+        .analyzer
+            width 100%
+            height 6rem
+            #myCanvas
+                width 100%
+                height 100%
+                background-color $bgseekbar
         .song
             flex(flex-start, center)
             font-family $ff
             color $bgcontrols
+            padding-left 4rem
             &__avatar
                 width 8rem
                 height 8rem
@@ -106,7 +112,7 @@ body
                 background-color $bgbtns
                 box-shadow inset -1px 0 1rem 0 $bgfillseekbar,
                           0 1px 1rem 0 rgba(#000, .5)
-                margin-left -2rem
+                margin-left -1.5rem
     &__controls
         padding 0 2rem
         flex(flex-start, center)
